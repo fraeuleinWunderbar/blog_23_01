@@ -21,7 +21,7 @@ class Block(models.Model):
         verbose_name_plural = "Blöcke"
 
     def __str__(self):
-        return self.name
+        return f"{self.title}/{self.author} ({self.created})"
 
     def get_absolute_url(self):
         return reverse("Block_detail", kwargs={"pk": self.pk})
